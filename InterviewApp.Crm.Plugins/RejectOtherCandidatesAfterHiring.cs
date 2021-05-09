@@ -5,18 +5,6 @@ using System;
 
 namespace InterviewApp.Crm.Plugins
 {
-    [CrmPluginRegistration("Update", "new_candidate", StageEnum.PostOperation,
-        ExecutionModeEnum.Asynchronous, "",
-        "InterviewApp.Crm.Plugins.RejectOtherCandidatesAfterHiring: Update of new_candidate", 1, IsolationModeEnum.None,
-        Image1Type = ImageTypeEnum.PostImage, Image1Name = "PostImage", Image1Attributes = "",
-        Description = "InterviewApp.Crm.Plugins.RejectOtherCandidatesAfterHiring: Update of new_candidate",
-        Id = "")]
-    [CrmPluginRegistration("SetState", "new_candidate", StageEnum.PostOperation, ExecutionModeEnum.Asynchronous,
-        "", "InterviewApp.Crm.Plugins.RejectOtherCandidatesAfterHiring: SetState of new_candidate", 1,
-        IsolationModeEnum.None, Image1Type = ImageTypeEnum.PostImage, Image1Name = "PostImage", Image1Attributes = "",
-        Description = "InterviewApp.Crm.Plugins.RejectOtherCandidatesAfterHiring: SetState of new_candidate",
-        Id = "")]
-
     public class RejectOtherCandidatesAfterHiring : PluginBase
     {
         protected override void ExecuteCrmPlugin(LocalPluginContext localContext)
