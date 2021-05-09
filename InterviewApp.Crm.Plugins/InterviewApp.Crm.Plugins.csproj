@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B9A8328-2703-4F12-9898-B6DCE295594F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InterviewApp.Crm.Plugins</RootNamespace>
+    <AssemblyName>InterviewApp.Crm.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>InterviewApp.Crm.Customisation.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\..\..\CRM SDK\SDK\Bin\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Globalization" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\InterviewApp.Crm.Common\Controllers\BaseClasses\ControllerBase.cs">
+      <Link>ReferencedFiles\Controllers\BaseClasses\ControllerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Controllers\CandidateController.cs">
+      <Link>ReferencedFiles\Controllers\CandidateController.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Entities\BaseClasses\EntityBase.cs">
+      <Link>ReferencedFiles\Entities\BaseClasses\EntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Entities\BaseClasses\SchemaNameAttribute.cs">
+      <Link>ReferencedFiles\Entities\BaseClasses\SchemaNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Entities\Candidate.cs">
+      <Link>ReferencedFiles\Entities\Candidate.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Entities\Role.cs">
+      <Link>ReferencedFiles\Entities\Role.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Services\BaseClasses\ServiceBase.cs">
+      <Link>ReferencedFiles\Service\BaseClasses\ServiceBase.cs</Link>
+    </Compile>
+    <Compile Include="..\InterviewApp.Crm.Common\Services\CandidateService.cs">
+      <Link>ReferencedFiles\Service\CandidateService.cs</Link>
+    </Compile>
+    <Compile Include="CrmPluginRegistrationAttribute.cs" />
+    <Compile Include="Factory\CRMGateway.cs" />
+    <Compile Include="Factory\OrganizationServiceFactory.cs" />
+    <Compile Include="Factory\PluginExecutionManager.cs" />
+    <Compile Include="Factory\PluginExecutionManagerFactory.cs" />
+    <Compile Include="PluginBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RejectOtherCandidatesAfterHiring.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="InterviewApp.Crm.Customisation.snk" />
+    <None Include="spkl.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
