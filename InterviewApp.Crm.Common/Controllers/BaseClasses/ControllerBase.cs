@@ -1,6 +1,6 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using InterviewApp.Crm.Common.Entities.BaseClasses;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using InterviewApp.Crm.Common.Entities.BaseClasses;
 using System;
 using System.Linq;
 using System.Reflection;
